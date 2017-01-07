@@ -74,7 +74,7 @@ function wpsdi_rewrite_catch() {
             echo '<meta name="twitter:creator" content="@'.$twitter_creator.'">';
         }?>
         <meta name="twitter:title" content="<?php echo $title;?>">
-        <meta name="twitter:description" content="<?php echo $description;?>">
+        <meta name="twitter:text:description" content="<?php echo $description;?>">
         <meta name="twitter:image" content="<?php echo $image_OBJ[0];?>">
         </head>
         <body>
