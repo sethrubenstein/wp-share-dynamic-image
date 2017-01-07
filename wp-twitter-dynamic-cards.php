@@ -32,8 +32,10 @@ function wpsdi_get_share_url($postID, $imageID) {
 }
 
 function wpsdi_get_site_twitter_username() {
-    //loop through possible seo yoast, seo framework, jetpack and look for site username and grab that.
-    
+    $username = '';
+    if ( get_option( 'twitter_site' ) ) {
+        $username = get_option( 'twitter_site' );
+    }
     return apply_filters( 'wpsdi_twitter_username', $username );
 }
 
