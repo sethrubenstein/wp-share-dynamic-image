@@ -6,7 +6,7 @@ The url structure is `{site_url}/share/{post_id}/{image_id}` where {site_url} is
 ## Filters
 `wpsdi_site_name` lets you change the site name used in Facebook OG:site_name - otherwise defaults to `bloginfo('name')`.
 
-`wpsdi_twitter_username` lets you pass the site's Twitter username.
+`wpsdi_twitter_username` lets you pass the site's Twitter username if you wish to override what Yoast SEO or The SEO Framework have set as your site's Twitter username.
 
 `wpsdi_twitter_creator` lets you pass a specific user's twitter username associated with this image/article. It's up to you to develop this out.
 
