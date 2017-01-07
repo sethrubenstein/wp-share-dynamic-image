@@ -31,11 +31,17 @@ function wpsdi_get_share_url($postID, $imageID) {
     return get_bloginfo( 'url' ).'/share/'.$postID.'/'.$imageID;
 }
 
+function wpsdi_get_site_twitter_username() {
+    //loop through possible seo yoast, seo framework, jetpack and look for site username and grab that.
+    
+    return apply_filters( 'wpsdi_twitter_username', $username );
+}
+
 function wpsdi_rewrite_catch() {
     if( get_query_var( 'imageid' ) && get_query_var( 'postid' ) ) {
         $site_name = apply_filters( 'wpsdi_site_name', get_bloginfo( 'name' ) );
-        $twitter_username = apply_filters( 'wpsdi_twitter_username', 'sethrubenstein' );
-        $twitter_creator = apply_filters( 'wpsdi_twitter_creator', 'sethrubenstein' );
+        $twitter_username = wpsdi_get_site_twitter_username();
+        $twitter_creator = apply_filters( 'wpsdi_twitter_creator', '' );
 
         $postID = get_query_var( 'postid' );
         $post_OBJ = get_post( $postID );
@@ -62,7 +68,9 @@ function wpsdi_rewrite_catch() {
         <meta property="og:url" content="<?php echo get_permalink($postID);?>" />
         <meta property="article:published_time" content="<?php echo get_the_date( 'Y-m-d', $postID );?>" />
         <!-- Twitter -->
-        <meta name="twitter:creator" content="@<?php echo $twitter_creator;?>">
+        <?php if ( !empty($twitter_creator) ) {
+            echo '<meta name="twitter:creator" content="@'.$twitter_creator.'">';
+        }?>
         <meta name="twitter:title" content="<?php echo $title;?>">
         <meta name="twitter:description" content="<?php echo $description;?>">
         <meta name="twitter:image" content="<?php echo $image_OBJ[0];?>">
