@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Share Dynamic Image
-Plugin URI: https://github.com/sethrubenstein/wp-share-dynamic-cards
+Plugin URI: https://github.com/sethrubenstein/wp-share-dynamic-image
 Description: Lets you share a post while changing the image, description for a shared card (Twitter or Facebook)
 Version: 1.0
 Author: Seth Rubenstein
