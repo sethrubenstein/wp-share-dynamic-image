@@ -49,8 +49,12 @@ function wpsdi_rewrite_catch() {
         $post_OBJ = get_post( $postID );
         $image_size = apply_filters( 'wpsdi_image_size', 'large' );
         $image_OBJ = wp_get_attachment_image_src( get_query_var( 'imageid' ), $image_size );
-        $title = $post_OBJ->post_title;
-        $description = $post_OBJ->post_excerpt;
+        $title = esc_attr($post_OBJ->post_title);
+        if ( empty($post_OBJ->post_excerpt) ) {
+            $description = $title;
+        } else {
+            $description = esc_attr($post_OBJ->post_excerpt);
+        }
         ?>
         <html lang="en-US">
         <head>
