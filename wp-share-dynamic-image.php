@@ -74,12 +74,13 @@ function wpsdi_rewrite_catch() {
         <meta property="og:url" content="<?php echo wpsdi_get_share_url ($postID, get_query_var( 'imageid' ) );?>" />
         <meta property="article:published_time" content="<?php echo get_the_date( 'Y-m-d', $postID );?>" />
         <!-- Twitter -->
-        <?php if ( !empty($twitter_creator) ) {
-            echo '<meta name="twitter:creator" content="@'.$twitter_creator.'">';
-        }?>
         <meta name="twitter:title" content="<?php echo $title;?>">
         <meta name="twitter:text:description" content="<?php echo $description;?>">
         <meta name="twitter:image" content="<?php echo $image_OBJ[0];?>">
+         <?php if ( !empty($twitter_creator) ) {
+            echo '<meta name="twitter:creator" content="@'.$twitter_creator.'">';
+        }?>
+            
         </head>
         <body>
         <script>
