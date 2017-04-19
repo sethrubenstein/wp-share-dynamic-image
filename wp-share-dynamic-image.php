@@ -6,6 +6,7 @@ Description: Lets you share a post while changing the image, description for a s
 Version: 1.0
 Author: Seth Rubenstein
 Author URI: http://sethrubenstein.info
+GitHub Plugin URI: sethrubenstein/wp-share-dynamic-image
 */
 
 // {site_url}/share/{post_id}/{image_id}
